@@ -14,4 +14,5 @@ resources :courses, only: [:index, :show] do
       resources :sections, only: [:new, :create]
     end
   end
+  resources :charges
 end
