@@ -12,6 +12,7 @@ class LessonsController < ApplicationController
     @current_lesson ||= Lesson.find(params[:id])
   end
   
+  
 
   def require_authorized_for_current_section
     if current_user.enrolled_in != current user

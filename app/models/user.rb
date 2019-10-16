@@ -1,6 +1,5 @@
 class User < ApplicationRecord
     has_many :courses
-    has_many :image
      has_many :enrollments
      has_many :enrolled_courses, through: :enrollments, source: :course
   # Include default devise modules. Others available are:
