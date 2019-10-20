@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
     before_action :authenticate_user!
-    before_action :require_authorized_for_current_section
+    before_action :require_enrollment_for_current_course, only: [:show]
     
     def show
     end
@@ -12,12 +12,11 @@ class LessonsController < ApplicationController
     @current_lesson ||= Lesson.find(params[:id])
   end
   
-  
+  def require_enrollment_for_current_course
+    if current_lesson.section.course.user != current_user.enrolled_in?(current_lesson.section.course)
+    redirect_to course_path(current_lesson.section.course), alert: "You are not errolled in this course"
+    end
+  end
 
-  def require_authorized_for_current_section
-    if current_user.enrolled_in != current user
-    return redirect_to root_url, alert: 'Error Message Here'
-        end
-    end 
-  
+
 end
