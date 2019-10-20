@@ -9,7 +9,7 @@ class Course < ApplicationRecord
     validates :title, presence: true
     validates :description, presence: true
     validates :cost, presence: true, numericality: {greater_than_or_equal_to: 0}
-    validates :image, presence: true
+    #validates :image, presence: true
     
     
     
