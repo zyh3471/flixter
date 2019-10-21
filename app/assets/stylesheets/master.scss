@@ -1,6 +1,10 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.sign out {
+    margin-top: 10px;
+}
+
 .navbar-inverse .navbar-nav .nav-link {
     color: black;
 }
@@ -27,10 +31,12 @@
 .nav-item {
     font-size: 30px;
     color: black;
+   
 }
 .signin {
     margin-right: 20px;
 }
+
 
 .hero {
     background: image_url('hero.jpg') no-repeat center center fixed;
@@ -164,4 +170,10 @@ ul .header .fa {
 
 .lessons li p {
   margin: 0;
+}
+
+.nav-item-dashboard {
+    margin-right: 25px;
+    font-size: 25px;
+
 }

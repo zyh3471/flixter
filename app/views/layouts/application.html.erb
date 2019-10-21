@@ -31,7 +31,11 @@
           </ul>
           <ul class="nav navbar-nav float-lg-right">
             <% if user_signed_in? %>
-              <li class="nav-item">
+             <li class="nav-item-dashboard">
+               
+                <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
+            </li>
+              <li class="nav-item sign out">
               <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
               </li>
             <% else %>
